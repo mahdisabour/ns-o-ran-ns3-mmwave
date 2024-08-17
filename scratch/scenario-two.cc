@@ -504,11 +504,7 @@ main (int argc, char *argv[])
       // Configure traffic generator
       OnOffHelper onOffHelper ("ns3::UdpSocketFactory",
                                InetSocketAddress (ueIpIface.GetAddress (u), 1234));
-      onOffHelper.SetAttribute ("DataRate",
-                                StringValue ("1Mbps")); // Default data rate; will be overridden
       onOffHelper.SetAttribute ("PacketSize", UintegerValue (1280));
-      onOffHelper.SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
-      onOffHelper.SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
 
       if (u < groupSize)
         {
